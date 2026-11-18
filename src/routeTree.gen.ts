@@ -10,33 +10,154 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AProposRouteImport } from './routes/a-propos'
+import { Route as ActualitesRouteImport } from './routes/actualites'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DomainesRouteImport } from './routes/domaines'
+import { Route as EspaceMembresRouteImport } from './routes/espace-membres'
+import { Route as FormationRouteImport } from './routes/formation'
+import { Route as ProjetsRouteImport } from './routes/projets'
+import { Route as PublicationsRouteImport } from './routes/publications'
+import { Route as SoutenirRouteImport } from './routes/soutenir'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AProposRoute = AProposRouteImport.update({
+  id: '/a-propos',
+  path: '/a-propos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ActualitesRoute = ActualitesRouteImport.update({
+  id: '/actualites',
+  path: '/actualites',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DomainesRoute = DomainesRouteImport.update({
+  id: '/domaines',
+  path: '/domaines',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EspaceMembresRoute = EspaceMembresRouteImport.update({
+  id: '/espace-membres',
+  path: '/espace-membres',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FormationRoute = FormationRouteImport.update({
+  id: '/formation',
+  path: '/formation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjetsRoute = ProjetsRouteImport.update({
+  id: '/projets',
+  path: '/projets',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PublicationsRoute = PublicationsRouteImport.update({
+  id: '/publications',
+  path: '/publications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SoutenirRoute = SoutenirRouteImport.update({
+  id: '/soutenir',
+  path: '/soutenir',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
+  '/actualites': typeof ActualitesRoute
+  '/contact': typeof ContactRoute
+  '/domaines': typeof DomainesRoute
+  '/espace-membres': typeof EspaceMembresRoute
+  '/formation': typeof FormationRoute
+  '/projets': typeof ProjetsRoute
+  '/publications': typeof PublicationsRoute
+  '/soutenir': typeof SoutenirRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
+  '/actualites': typeof ActualitesRoute
+  '/contact': typeof ContactRoute
+  '/domaines': typeof DomainesRoute
+  '/espace-membres': typeof EspaceMembresRoute
+  '/formation': typeof FormationRoute
+  '/projets': typeof ProjetsRoute
+  '/publications': typeof PublicationsRoute
+  '/soutenir': typeof SoutenirRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
+  '/actualites': typeof ActualitesRoute
+  '/contact': typeof ContactRoute
+  '/domaines': typeof DomainesRoute
+  '/espace-membres': typeof EspaceMembresRoute
+  '/formation': typeof FormationRoute
+  '/projets': typeof ProjetsRoute
+  '/publications': typeof PublicationsRoute
+  '/soutenir': typeof SoutenirRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/a-propos'
+    | '/actualites'
+    | '/contact'
+    | '/domaines'
+    | '/espace-membres'
+    | '/formation'
+    | '/projets'
+    | '/publications'
+    | '/soutenir'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/a-propos'
+    | '/actualites'
+    | '/contact'
+    | '/domaines'
+    | '/espace-membres'
+    | '/formation'
+    | '/projets'
+    | '/publications'
+    | '/soutenir'
+  id:
+    | '__root__'
+    | '/'
+    | '/a-propos'
+    | '/actualites'
+    | '/contact'
+    | '/domaines'
+    | '/espace-membres'
+    | '/formation'
+    | '/projets'
+    | '/publications'
+    | '/soutenir'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AProposRoute: typeof AProposRoute
+  ActualitesRoute: typeof ActualitesRoute
+  ContactRoute: typeof ContactRoute
+  DomainesRoute: typeof DomainesRoute
+  EspaceMembresRoute: typeof EspaceMembresRoute
+  FormationRoute: typeof FormationRoute
+  ProjetsRoute: typeof ProjetsRoute
+  PublicationsRoute: typeof PublicationsRoute
+  SoutenirRoute: typeof SoutenirRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +169,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/a-propos': {
+      id: '/a-propos'
+      path: '/a-propos'
+      fullPath: '/a-propos'
+      preLoaderRoute: typeof AProposRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/actualites': {
+      id: '/actualites'
+      path: '/actualites'
+      fullPath: '/actualites'
+      preLoaderRoute: typeof ActualitesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/domaines': {
+      id: '/domaines'
+      path: '/domaines'
+      fullPath: '/domaines'
+      preLoaderRoute: typeof DomainesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/espace-membres': {
+      id: '/espace-membres'
+      path: '/espace-membres'
+      fullPath: '/espace-membres'
+      preLoaderRoute: typeof EspaceMembresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/formation': {
+      id: '/formation'
+      path: '/formation'
+      fullPath: '/formation'
+      preLoaderRoute: typeof FormationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projets': {
+      id: '/projets'
+      path: '/projets'
+      fullPath: '/projets'
+      preLoaderRoute: typeof ProjetsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/publications': {
+      id: '/publications'
+      path: '/publications'
+      fullPath: '/publications'
+      preLoaderRoute: typeof PublicationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/soutenir': {
+      id: '/soutenir'
+      path: '/soutenir'
+      fullPath: '/soutenir'
+      preLoaderRoute: typeof SoutenirRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AProposRoute: AProposRoute,
+  ActualitesRoute: ActualitesRoute,
+  ContactRoute: ContactRoute,
+  DomainesRoute: DomainesRoute,
+  EspaceMembresRoute: EspaceMembresRoute,
+  FormationRoute: FormationRoute,
+  ProjetsRoute: ProjetsRoute,
+  PublicationsRoute: PublicationsRoute,
+  SoutenirRoute: SoutenirRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
