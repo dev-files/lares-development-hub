@@ -33,8 +33,8 @@ function Index() {
         <div className="container-site grid gap-8 py-14 md:grid-cols-[1fr_320px] items-center">
           <div>
             <p className="eyebrow text-orange">À la une</p>
-            <h2 className="mt-2 text-3xl font-semibold text-on-color">{actualites[0].titre}</h2>
-            <p className="mt-3 opacity-90">{actualites[0].resume}</p>
+            <h2 className="mt-2 text-3xl font-semibold text-on-color">{actualites[0]?.titre}</h2>
+            <p className="mt-3 opacity-90">{actualites[0]?.resume}</p>
             <Link to="/actualites" className="mt-4 inline-flex items-center gap-2 font-semibold text-orange">Lire la suite <ArrowRight className="h-4 w-4" /></Link>
           </div>
           <div className="rounded-xl bg-orange p-6 text-ink">
