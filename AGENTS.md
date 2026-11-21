@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+- Keep administration under the client-only authenticated layout; every content mutation independently validates the admin database role so UI access cannot bypass authorization.
+- Store editable news, projects and publications in site_content with validated kind-specific payloads; public loaders read only published rows and never use privileged clients.
+- Use one shared AccountSession subscriber for session-driven UI and router invalidation; roles live separately from editable profiles to prevent privilege escalation.

@@ -1,0 +1,4 @@
+CREATE FUNCTION public.grant_first_admin() RETURNS trigger LANGUAGE plpgsql SECURITY DEFINER SET search_path=public AS $$ BEGIN IF new.email_confirmed_at IS NOT NULL AND lower(new.email)='soule_akim@yahoo.fr' THEN INSERT INTO public.user_roles(user_id,role) VALUES(new.id,'admin') ON CONFLICT DO NOTHING; END IF; RETURN new; END $$;
+REVOKE ALL ON FUNCTION public.grant_first_admin() FROM PUBLIC,anon,authenticated;
+CREATE TRIGGER on_confirm_first_admin AFTER UPDATE OF email_confirmed_at ON auth.users FOR EACH ROW WHEN(old.email_confirmed_at IS NULL AND new.email_confirmed_at IS NOT NULL) EXECUTE FUNCTION public.grant_first_admin();
+CREATE TRIGGER on_create_verified_first_admin AFTER INSERT ON auth.users FOR EACH ROW EXECUTE FUNCTION public.grant_first_admin();
